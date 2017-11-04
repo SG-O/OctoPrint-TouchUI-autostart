@@ -111,7 +111,7 @@
 		setTimeout(processRequest, 3000);
 		
 		if(pass > 0) {
-			progress.innerHTML = "<span id=\"badge\">" + pass + "</span> Connecting to TouchUI";
+			progress.innerHTML = "<span id=\"badge\">" + pass + "</span> Connecting to server";
 		}
 	};
 
