@@ -62,6 +62,11 @@
 				break;
 				
 			default:
+				if(!isNaN(event.data)) {
+					clearTimeout(checkTimeout);
+					setMsg("", "", "hide");
+					return;
+				}
 				if (typeof event.data === "object") {
 					var msg = event.data[0];
 					var file = event.data[1];
