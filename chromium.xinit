@@ -4,6 +4,7 @@
 TOUCHUI_ARGS=""
 TOUCHUI_DEBUG=""
 TOUCHUI_EXTRA='echo "TouchUI: screensaver enabled"'
+TOUCHUI_USER="htp260"
 
 # Uncomment the next variable to generate a full log under ~/.config/chromium/chrome_debug.log
 # or to enable the remote deugger, forward port by haproxy or by tunnel

@@ -1,7 +1,7 @@
 # Configuration for /etc/init.d/touchui
 
 # The init.d script will only run if this variable non-empty.
-TOUCHUI_USER=pi
+TOUCHUI_USER=htp260
 
 # Where is the xinit file locatated
 TOUCHUI_DIR="TouchUI-autostart"
@@ -26,7 +26,7 @@ NICELEVEL=-2
 START=yes
 
 # Should Chromium start with touch events? (false or true)
-FORCE_TOUCH=false
+FORCE_TOUCH=true
 
 # Enable or disable the screensaver
-DISABLE_SCREENSAVER=false
+DISABLE_SCREENSAVER=true

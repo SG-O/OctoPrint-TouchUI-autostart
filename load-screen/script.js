@@ -31,14 +31,14 @@
 	content.onload = function() {
 		setTimeout(function() {
 			if (!hasPostMessage) {
-				setMsg("OctoPrint loaded without TouchUI", "Tap to retry", "error");
+				setMsg("Server loaded without user interface, "Tap to retry", "error");
 			}
 		}, 100);
 	}
 
 	document.addEventListener("click", function() {
 		if (document.body.className.indexOf("error") !== -1) {
-			setMsg("Connecting to TouchUI", "", "");
+			setMsg("Connecting to Server", "", "");
 			
 			pass = 0;
 			++retry;
@@ -54,7 +54,7 @@
 
 		switch(event.data) {
 			case 'loading':
-				setMsg("Loading TouchUI", "", "");
+				setMsg("Loading User Interface", "", "");
 				
 				checkTimeout = setTimeout(function() {
 					setMsg("Startup failed..", "Tap to retry", "error");
@@ -62,20 +62,6 @@
 				break;
 				
 			default:
-				// version check by number
-				if(!isNaN(event.data)) {
-					if (parseFloat(event.data) > version) {
-						setMsg("Update your bootloader!", "Read the wiki &amp; Tap to proceed", "info");
-						return;
-						
-					//TouchUI is ready and has same version
-					} else { 
-						clearTimeout(checkTimeout);
-						setMsg("", "", "hide");
-						return;
-					}
-				}
-				
 				if (typeof event.data === "object") {
 					var msg = event.data[0];
 					var file = event.data[1];
@@ -95,7 +81,7 @@
 	}, false);
 
 	function reqListener () {
-		setMsg("Loading OctoPrint", "", "");
+		setMsg("Loading Server", "", "");
 		content.setAttribute("src", prefix);
 	}
 
@@ -104,7 +90,7 @@
 		//console.log("Pass: " + pass);
 
 		if(pass >= 30) {
-			setMsg("Connecting to TouchUI failed..", "", "error");
+			setMsg("Connecting to server interface failed..", "", "error");
 			return;
 		}
 
