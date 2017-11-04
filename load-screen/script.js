@@ -31,7 +31,7 @@
 	content.onload = function() {
 		setTimeout(function() {
 			if (!hasPostMessage) {
-				setMsg("Server loaded without user interface, "Tap to retry", "error");
+				setMsg("Server loaded without user interface", "Tap to retry", "error");
 			}
 		}, 100);
 	}
